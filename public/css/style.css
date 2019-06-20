@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: arial, sans serif;
+    margin: 0;
+    padding: 0;
+}
+
+.flexOne {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+section {
+    padding: 20px 0;
+
+}
+
+ul {
+    list-style: none;
+}
+
+.main-nav {
+    list-style: none;
+    margin-top: 33px;
+
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+    margin-top: 20px;
+
+}
+
+.connect {
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: #2458ff;
+    padding: 12px 30px;
+}
+
+.mySlides {
+    display: none;
+}
+
+/*/////////////////////MAIN/////////////////////////////////*/
+.arrowTwo {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 241px;
+}
+
+.mySlides button {
+    width: 60%;
+    padding: 0;
+    color: #ffff;
+    background: #294d90;
+    border: 0;
+    padding: 12px;
+    font-size: 132%;
+    border-radius: 6px;
+    transition: width 2s;
+    -webkit-transition: 2s;
+    outline: none;
+
+}
+
+.mySlides button:hover {
+    background-color: #2c69af;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.mySlides img {
+    width: 60%;
+    margin: -9px;
+    border-radius: 4px;
+    -webkit-box-shadow: 1px 2px 26px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 26px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 2px 26px 5px rgba(0, 0, 0, 0.75);
+}
+.display-left,.display-right{
+    background: none;
+    border: none;
+    font-size: 228%;
+    outline: none;
+}
+
+.mainOne .row h5 , .mainOne > .row > li {
+    line-height: 261%;
+    font-weight: bold;
+}
+.row div{
+    text-align: center;
+}
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.steap-blue {
+    background-color: #294d90;
+    color: #ffffff;
+}
+
+.info, .info h1 {
+    text-align: center;
+    color: #ffffff;
+
+}
+
+/*///////////////////////////////////////////////////FOOOTER//////////////////////////////////////////////////////////////////////////////*/
+.steap-black {
+    background-color: #000000;
+
+
+}
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerOne {
+    font-weight: bold;
+    line-height: 20px;
+    font-weight: bold;
+    display: -webkit-inline-box;
+    margin: 50px auto;
+}
+
+.footerOne .footerTwo {
+
+    color: white;
+
+}
+
+.footerOne p a {
+    color: white;
+}
+
+.footerTwo {
+    margin: 0 0 0 93px;
+}
+
