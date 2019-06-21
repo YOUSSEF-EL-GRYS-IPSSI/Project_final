@@ -12,6 +12,16 @@ body {
     display: flex;
     justify-content: space-between;
 }
+header{
+    position: fixed;
+    background: white;
+    width: 100%;
+    /*border-bottom: #0800ff 3px solid;*/
+    -webkit-box-shadow: 3px 9px 23px -6px rgba(41,77,144,1);
+    -moz-box-shadow: 3px 9px 23px -6px rgba(41,77,144,1);
+    box-shadow: 3px 9px 23px -6px rgba(41,77,144,1);
+
+}
 
 .row {
     max-width: 1200px;
@@ -54,7 +64,7 @@ a {
 .connect {
     border-radius: 20px;
     color: #ffffff;
-    background-color: #2458ff;
+    background-color: #294d90;
     padding: 12px 30px;
 }
 
@@ -162,5 +172,23 @@ a {
 
 .footerTwo {
     margin: 0 0 0 93px;
+}
+/*/////////////////////reponsive////////////////////////////////////////*/
+
+@media only screen and (max-width: 1000px) {
+    /* For desktop: */
+    header{display: none}
+    /*.col-1 {width: 8.33%;}*/
+    /*.col-2 {width: 16.66%;}*/
+    /*.col-3 {width: 25%;}*/
+    /*.col-4 {width: 33.33%;}*/
+    /*.col-5 {width: 41.66%;}*/
+    /*.col-6 {width: 50%;}*/
+    /*.col-7 {width: 58.33%;}*/
+    /*.col-8 {width: 66.66%;}*/
+    /*.col-9 {width: 75%;}*/
+    /*.col-10 {width: 83.33%;}*/
+    /*.col-11 {width: 91.66%;}*/
+    /*.col-12 {width: 100%;}*/
 }
 
