@@ -18,16 +18,34 @@ class ArticleRepository
      */
     public function __construct($entityManager)
     {
-        $this->_repository = $entityManager->getRepository('Article');
+        $this->_repository = $entityManager->getRepository('article');
     }
 
-
+    /**
+     * @return mixed
+     */
     public function getAllArticles(){
-        return $this->_repository->findAll();
-    }
+        return $this->_repository->createQueryBuilder('a')
+            ->where('a.is_published = 1')
+            ->getQuery()->execute();    }
 
     public function getArticleById($id){
         return $this->_repository->find($id);
+    }
+
+    public function getArticlesByDate($date){
+        return $this->_repository->createQueryBuilder('a')
+            ->where("a.created_at = '". $date . "'")
+            ->andWhere('a.is_published = 1')
+            ->getQuery()->execute();
+    }
+
+    public function getArticlesBetweenTwoDates($startDate, $endDate){
+        return $this->_repository->createQueryBuilder('a')
+            ->where("a.created_at >= '". $startDate . "'")
+            ->andWhere("a.created_at <= '". $endDate . "'")
+            ->andWhere('a.is_published = 1')
+            ->getQuery()->execute();
     }
 
 }

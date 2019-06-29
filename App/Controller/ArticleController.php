@@ -60,5 +60,26 @@ class ArticleController extends AbstractController
         //var_dump($articleService->getAllArticles());
     }
 
+    public function indexAction(){
+        $this->render('index');
+    }
+
+    public function getArticlesByDateAction(){
+        $articleService = new ArticleService($this->_entityManager);
+        $this->set(array('article' => json_encode($articleService->getArticlesByDate($_POST['date']))));
+        $this->render('index');
+    }
+
+    public function getArticlesByDatePostAction(){
+        $articleService = new ArticleService($this->_entityManager);
+        $date = json_decode($_POST['data'])->startPeriod;
+        $data = $articleService->getArticlesByDate($date);
+        $data = array_map(function($e){
+            return utf8_encode($e);
+        }, get_object_vars($data[0]));
+        echo json_encode(($data));
+        exit;
+    }
+
 
 }

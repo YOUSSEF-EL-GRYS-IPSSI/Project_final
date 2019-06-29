@@ -1,10 +1,122 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: grimm
- * Date: 21/05/2019
- * Time: 19:06
- */
-var_dump($test);
-?>
-<h1> coucou </h1>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,400i" rel="stylesheet">
+    <script src="../../public/js/main.js"></script>
+    <title>Carriere Sous Poissy</title>
+    <style>
+        .bigSlider {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+   
+   <?php include ROOT."App/View/commun/header.phtml"?>
+    <section style="overflow: hidden;
+height: 350px;">
+        <div style="max-width:100%">
+            <img class="mySlide" src="../../public/images/img35.jpg" style="width:100%">
+            <img class="mySlide" src="../../public/images/loisir.jpg" style="width:100%">
+            <img class="mySlide" src="../../public/images/img34.jpg" style="width:100%">
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <div class="bigSlider">
+                <div class='mySlides'>
+
+                    <img src="../../public/images/slide-1.jpg">
+                    <div>
+                        <button>En Savoir Plus</button>
+                    </div>
+                </div>
+                <div class='mySlides'>
+
+                    <img src="../../public/images/slide-2.jpg">
+                    <div>
+                        <button>En Savoir Plus</button>
+                    </div>
+                </div>
+                <div class='mySlides'>
+
+                    <img src="../../public/images/slide-3.jpg">
+                    <div>
+                        <button>En Savoir Plus</button>
+                    </div>
+                </div>
+                <div class='mySlides'>
+
+                    <img src="../../public/images/slide-4.jpg">
+                    <div>
+                        <button>En Savoir Plus</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="arrowTwo">
+
+                <button class="display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="display-right" onclick="plusDivs(1)">&#10095;</button>
+            </div>
+
+        </div>
+    </section>
+
+ 
+    <?php include ROOT."App/View/commun/footer.phtml" ?>
+ </div>
+ <?php include ROOT."App/View/commun/connection.phtml"?>
+</body>
+<script>
+    let myIndex = 0
+    carousel()
+showActive("accueil")
+    function carousel() {
+        let i
+        let x = document.getElementsByClassName("mySlide")
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"
+        }
+        myIndex++
+        if (myIndex > x.length) {
+            myIndex = 1
+        }
+        x[myIndex - 1].style.display = "block"
+        setTimeout(carousel, 2000) // Change iage every 2 seconds
+    }
+
+    ///////////////////////////////////////
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</html>

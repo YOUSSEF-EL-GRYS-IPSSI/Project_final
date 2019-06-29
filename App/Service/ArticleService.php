@@ -59,6 +59,10 @@ class ArticleService
         $this->_entityManager->remove($article);
         $this->_entityManager->flush();
     }
+
+    public function getArticlesByDate($date){
+        return $this->_articleRepository->getArticlesByDate($date);
+    }
 }
 
 

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="../../../public/js/article.js"></script>
+
+        <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,400i" rel="stylesheet">
+
+    <title>Carriere Sous Poissy</title>
+</head>
+<body>
+
+       <div class="main">
+<?php include ROOT."App/View/commun/header.phtml" ?>
+
+               <section>
+               <div>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                  <center>
+                      Date de début : <input type="date" value="2018-01-14" id="startPeriod"><br>
+                      Date de fin : <input type="date" value="2019-06-30" id="endPeriod"></br>
+                      <input id="dateSubmit" onclick="getArticles()" type="button" value="soumettre" name="submit">
+                  </center>
+               </div>
+           </section>
+            <section>
+                <div id="articles">
+
+                </div>
+            </section>
+
+           <?php include ROOT."/App/View/commun/footer.phtml"  ?>
+       </div>
+       <?php include ROOT."/App/View/commun/connection.phtml"?>
+
+</body>
+
+</html>

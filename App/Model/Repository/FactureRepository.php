@@ -30,4 +30,10 @@ class FactureRepository
         return $this->_repository->find($id);
     }
 
+    public function getFactureByUser(User $user){
+        return $this->_repository->createQueryBuilder('u')
+            ->where("u.user_id = ". $user->getId())
+            ->getQuery()->execute();
+    }
+
 }

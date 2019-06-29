@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="../../../public/js/contact.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,400i" rel="stylesheet">
+    <title>Carriere Sous Poissy</title>
+    <style>
+        .bigSlider {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+       <div class="main">
+<?php include ROOT."App/View/commun/header.phtml" ?>
+    <section>
+
+        <div id="form-page">
+            <form id="contact-form">
+                <div class="main-control">
+                    <div class="input-control">
+                        <input type="text" id="email" class="form-input" placeholder="Email">
+                        <input type="text" id="name" class="form-input" placeholder="Nom">
+                    </div>
+                    <div class="select-control">
+                        <select name="" id="clean" class="signal">
+                            <option value="proprete-ville">Propreté de la ville</option>
+                        </select>
+                        <select name="" id="clean-2" class="orient">
+                            <option value="proprete">Propreté</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-area-control">
+                    <textarea name="" id="msg" cols="30" rows="10" placeholder="Votre message"></textarea>
+                </div>
+
+                <button type="button" onclick="sendMail()" class="btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+
+    <?php include ROOT."/App/View/commun/footer.phtml"  ?>
+    </div>
+ <?php include ROOT."/App/View/commun/connection.phtml"?>
+    <script>
+        showActive("contact")
+        function submitForm() {
+            document.querySelector("#contact-form").preventDefault();
+
+        }
+    </script>
+</body>
+<script>
+
+</script>
+
+</html>

@@ -1,0 +1,194 @@
+<div class="mask" onclick="hideModal()">
+</div>
+
+<div class="modal connection-modal mini">
+    <div class="modal-title">
+        Formulaire
+    </div>
+    <div class="modal-body">
+        <form onsubmit="connectionPrevent(this)">
+            <div class="form-connection-controller">
+                <div class="label-controller">
+                    <label for="">Email</label>
+                </div>
+                <div class="input-controller"> <input type="email"></div>
+
+            </div>
+            <div class="form-connection-controller">
+                <div class="label-controller"> <label for="">Mot de passe</label></div>
+                <div class="input-controller"> <input type="password"></div>
+            </div>
+            <div class="form-submit-controller">
+                <button type="submit">Connexion</button>
+            </div>
+            <div class="form-psw-forgot">
+                Mot de passe oublié?
+            </div>
+    </div>
+
+    </form>
+</div>
+
+
+
+
+
+<script>
+
+    function connectionPrevent(elem) {
+        elem.preventDefault();
+    }
+
+    function hideModal() {
+        document.querySelector(".modal").classList.remove("active")
+        document.querySelector(".mask").classList.remove("active")
+    }
+</script>
+<style>
+    .mask {
+        display: none;
+    }
+
+    @media only screen and (max-width: 400px) {
+        .modal.active.connection-modal {
+            width: 90% !important;
+        }
+
+        .modal.active.connection-modal.mini {
+            width: 90% !important;
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .modal.active .input-controller input {
+            max-width: 100% !important;
+        }
+
+        .modal.active .modal-title {
+            font-size: 1em !important;
+            padding: 0 !important;
+        }
+
+        .modal.active.connection-modal {
+            width: 50% !important;
+        }
+    }
+
+    .modal.active .form-psw-forgot {
+        float: right;
+        font-size: 1em;
+
+        color: rgba(0, 0, 0, .4);
+        margin-top: 20px;
+
+    }
+
+    .mask.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        opacity: .5;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: #000;
+    }
+
+    .modal {
+        z-index: 1041;
+        display: none;
+    }
+
+    .modal.active {
+        display: block;
+    }
+
+    .modal.active.connection-modal {
+        top: 50%;
+        width: 30%;
+        text-align: center;
+        position: fixed;
+        background: white;
+        left: 50%;
+        transition: all .3s linear;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        padding: 30px 40px 20px 40px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+        animation-name: fadeDown;
+        animation-duration: .3s;
+    }
+
+    @keyframes fadeDown {
+        from {
+            transform: translate(-50%, -50%) scale(.2);
+        }
+
+        to {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    .modal.active .modal-title {
+        font-weight: bold;
+        font-size: 1.8em;
+        padding: 50px;
+        margin-bottom: 10px;
+        letter-spacing: 4px;
+        transition: all .3s linear;
+        color: rgba(0, 0, 0, .6);
+    }
+
+    .modal.active .label-controller {
+        font-size: 1.1em;
+        letter-spacing: 2px;
+        color: rgba(0, 0, 0, .4);
+    }
+
+    .modal.active .form-submit-controller button {
+        padding: 10px 20px 10px 20px;
+        border: 1px solid white;
+        font-size: .9em;
+        cursor: pointer;
+        background-color: #294d90;
+        color: white;
+        font-weight: bold;
+        box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+        transition: all .3s linear;
+        border-radius: 4px;
+    }
+
+    .modal.active .form-submit-controller button:active {
+        background-color: #A9B7D2;
+    }
+
+    .modal.active .form-submit-controller button:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    }
+
+    .modal.active .input-controller {
+        margin-top: 10px;
+    }
+
+    .modal.active .input-controller input {
+
+        border-radius: 4px;
+        transition: all .3s linear;
+        border: 0;
+
+        box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+        padding: 10px;
+        transition: all .3 linear;
+        text-align: center;
+        font-size: .8em;
+    }
+
+    .modal.active .modal-body .form-connection-controller {
+        width: 100%;
+
+
+        margin-bottom: 20px;
+    }
+</style>

@@ -1,0 +1,165 @@
+<header>
+    <div class="Navbar">
+        <div class="Navbar__Link Navbar__Link-brand">
+            <img src="../../public/images/csp.jpg" alt="Carriere-Sous-Poissy" class="logo">
+        </div>
+        <div class="Navbar__Link Navbar__Link-toggle">
+            <img src="../../public/images/menu.png" toggle="false" class="burger" width="25px" alt="">
+        </div>
+        <nav class="Navbar__Items">
+            <div class="Navbar__Link">
+                <span class="link-label" data-tag="accueil"><a href="/home/index">Accueil</a></span>
+            </div>
+            <div class="Navbar__Link">
+                <span class="link-label" data-tag="info"><a href="/discover/index">Découvrir la ville</a>
+                </span>
+            </div>
+            <div class="Navbar__Link">
+                <span class="link-label" data-tag="event"> <a href="/article/index">Articles</a></span>
+            </div>
+            <div class="Navbar__Link">
+                <span class="link-label" data-tag="contact"> <a href="/contact/index">Contact</a></span>
+            </div>
+            <div class="Navbar__Link">
+                <span style="opacity: 0">d</span>
+            </div>
+            <div class="Navbar__Link">
+                <span class="connect" onclick="showConnection()">Connexion</span>
+            </div>
+
+        </nav>
+
+    </div>
+
+
+
+</header>
+
+
+<script>
+    function showActive(link) {
+        console.log();
+
+        let active = document.querySelector(".link-label .active")
+        let link_to_active = document.querySelector(".link-label[data-tag='" + link + "']")
+
+        if (link_to_active != null) {
+
+            if (active != null)
+                active.classList.remove("active")
+            link_to_active.classList.add("active")
+        }
+
+
+    }
+
+    function showConnection() {
+
+        document.querySelector(".modal").classList.add("active")
+        document.querySelector(".mask").classList.add("active")
+    }
+
+    function classToggle() {
+        const navs = document.querySelectorAll('.Navbar__Items')
+        const burger = document.querySelector(".burger")
+
+        if (burger.attributes.toggle.textContent == "false") {
+            burger.attributes.toggle.textContent = "true"
+            burger.src = burger.src.split("/").splice(0, 5).join("/") + "/cross.png"
+        } else {
+            burger.attributes.toggle.textContent = "false"
+            burger.src = burger.src.split("/").splice(0, 5).join("/") + "/menu.png"
+        }
+        navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'))
+    }
+
+    document.querySelector('.Navbar__Link-toggle')
+        .addEventListener('click', classToggle)
+</script>
+
+<style>
+    .Navbar {
+        background-color: white;
+        display: flex;
+        padding: 16px;
+        font-family: sans-serif;
+    }
+
+    .Navbar__Link {
+        padding-right: 8px;
+        margin-right: 10px;
+        top: 50%;
+        position: relative;
+        line-height: 18px;
+        text-align: center;
+    }
+
+
+
+    .link-label {
+        transition: all .3s linear;
+        cursor: pointer;
+        padding: 3px;
+        border-radius: 10px;
+    }
+
+    .link-label:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+
+
+    }
+
+    .Navbar__Items {
+        display: flex;
+        transition: all .3s linear;
+        left: 100%;
+        position: relative;
+        transform: translateX(-150%);
+    }
+
+    .Navbar__Items--right {
+        margin-left: auto;
+    }
+
+    .Navbar__Link-toggle {
+        display: none;
+        z-index: 999;
+    }
+
+    @media only screen and (max-width: 1000px) {
+
+        .Navbar__Items,
+        .Navbar {
+            flex-direction: column;
+        }
+
+
+        .link-label,
+        .connect {
+            left: 50%;
+            position: relative;
+        }
+
+        .Navbar__Items {
+            display: none;
+
+        }
+
+        .Navbar__Items--right {
+            margin-left: 0;
+        }
+
+        .Navbar__ToggleShow {
+            display: flex;
+            height: 220px;
+            margin-top: -10%;
+        }
+
+        .Navbar__Link-toggle {
+            align-self: flex-end;
+            display: initial;
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+</style>

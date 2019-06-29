@@ -24,7 +24,7 @@ class User
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
 
-    private $id;
+    public $id;
 
     /**
      * @var integer
@@ -33,7 +33,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $firstname;
+    public $firstname;
 
     /**
      * @var integer
@@ -42,7 +42,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $lastname;
+    public $lastname;
 
     /**
      * @var integer
@@ -51,7 +51,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $email;
+    public $email;
 
     /**
      * @var integer
@@ -61,7 +61,7 @@ class User
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
 
-    private $password;
+    public $password;
     /**
      * @var integer
      *
@@ -69,7 +69,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $birthday;
+    public $birthday;
     /**
      * @var integer
      *
@@ -77,7 +77,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $address;
+    public $address;
     /**
      * @var integer
      *
@@ -85,7 +85,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $phonenumber;
+    public $phonenumber;
     /**
      * @var integer
      *
@@ -93,7 +93,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $is_admin;
+    public $is_admin;
     /**
      * @var integer
      *
@@ -101,7 +101,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $bio;
+    public $bio;
     /**
      * User constructor.
      * @param $id
@@ -128,173 +128,4 @@ class User
         $this->is_admin = $is_admin;
         $this->bio = $bio;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFirstname()
-    {
-        return $this->firstname;
-    }
-
-    /**
-     * @param mixed $firstname
-     */
-    public function setFirstname($firstname)
-    {
-        $this->firstname = $firstname;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLastname()
-    {
-        return $this->lastname;
-    }
-
-    /**
-     * @param mixed $lastname
-     */
-    public function setLastname($lastname)
-    {
-        $this->lastname = $lastname;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBirthday()
-    {
-        return $this->birthday;
-    }
-
-    /**
-     * @param mixed $birthday
-     */
-    public function setBirthday($birthday)
-    {
-        $this->birthday = $birthday;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    /**
-     * @param mixed $address
-     */
-    public function setAddress($address)
-    {
-        $this->address = $address;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPhonenumber()
-    {
-        return $this->phonenumber;
-    }
-
-    /**
-     * @param mixed $phonenumber
-     */
-    public function setPhonenumber($phonenumber)
-    {
-        $this->phonenumber = $phonenumber;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getisAdmin()
-    {
-        return $this->is_admin;
-    }
-
-    /**
-     * @param mixed $is_admin
-     */
-    public function setIsAdmin($is_admin)
-    {
-        $this->is_admin = $is_admin;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBio()
-    {
-        return $this->bio;
-    }
-
-    /**
-     * @param mixed $bio
-     */
-    public function setBio($bio)
-    {
-        $this->bio = $bio;
-    }
-
-
-
-
-
-
-
-
-
 }
