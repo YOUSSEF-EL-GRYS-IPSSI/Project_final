@@ -32,15 +32,14 @@ class Article{
 
     toHtml = function(){
         let div = "<div id='article'>";
-        div += "<span>"+this.id+"</span><br/>";
-        div += "<span>"+this.title+"</span><br/>";
-        div += "<span>"+this.createdAt+"</span><br/>";
-        div += "<span>"+this.content+"</span><br/>";
-        div += "<span>"+this.summary+"</span><br/>";
-        div += "<span>"+this.image+"</span><br/>";
-        div += "<span>"+this.video+"</span><br/>";
-        div += "<span>"+this.collection+"</span><br/>";
-        div += "</div>";
+        div += "<p>"+this.id+"</p>";
+        div += "<h3>"+this.title+"</h3>";
+        div += "<p>"+this.createdAt+"</p>";
+        div += "<p>"+this.content+"</p>";
+        div += "<p>"+this.summary+"</p>";
+        div += "<p>"+this.image+"</p>";
+        div += "<p>"+this.video+"</p>";
+        div += "<p>"+this.collection+"</p>";
         document.getElementById("articles").innerHTML = div;
     }
 }

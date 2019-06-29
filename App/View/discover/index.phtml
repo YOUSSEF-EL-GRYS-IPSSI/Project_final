@@ -9,35 +9,30 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,400i" rel="stylesheet">
     <script src="../../public/js/main.js"></script>
     <title>Carriere Sous Poissy</title>
-    <style>
-        .bigSlider {
-            text-align: center;
-        }
-    </style>
-</head>
 <body>
-    <div class="main">
-<?php include ROOT."App/View/commun/header.phtml"  ?>
-<section>
-    <div style="max-width:100%">
-        <img class="mySlide" src="../../public/images/img35.jpg" style="width:100%">
-        <img class="mySlide" src="../../public/images/loisir.jpg" style="width:100%">
-        <img class="mySlide" src="../../public/images/img34.jpg" style="width:100%">
-    </div>
-</section>
-<section class="mainOne">
-    <div class="row">
-        <div>
-        <img src="../../public/images/mairie.png">
+<div class="main">
+    <?php include ROOT . "App/View/commun/header.phtml" ?>
+    <section>
+        <div style="max-width:100%">
+            <img class="mySlide" src="../../public/images/img35.jpg" style="width:100%">
+            <img class="mySlide" src="../../public/images/loisir.jpg" style="width:100%">
+            <img class="mySlide" src="../../public/images/img34.jpg" style="width:100%">
         </div>
-        <h5>Lovée dans une boucle de la Seine, Carrières-sous-Poissy offre à ses habitants tout le charme d'une petite
-            ville moderne,<br>
-            fière d'un passé toujours inscrit dans la diversité de ses paysages :<br> surprenantes carrières de
-            calcaire, chemin verdoyant qui borde le Fleuve et le canal de la Dérivation,<br>
-            hier haut lieu de la batellerie, étang aux eaux poissonneuses célèbre pour ses petites maisons de pêcheurs
-            flottantes, vaste plaine maraîchère témoin d'une activité agricole autrefois prospère...<br>
-            À quelques encablures de la capitale, comme un air de campagne !</h5>
-
+    </section>
+    <section class="mainOne">
+        <div class="row">
+            <div>
+                <img src="../../public/images/mairie.png">
+            </div>
+            <h5>Lovée dans une boucle de la Seine, Carrières-sous-Poissy offre à ses habitants tout le charme d'une
+                petite
+                ville moderne,<br>
+                fière d'un passé toujours inscrit dans la diversité de ses paysages :<br> surprenantes carrières de
+                calcaire, chemin verdoyant qui borde le Fleuve et le canal de la Dérivation,<br>
+                hier haut lieu de la batellerie, étang aux eaux poissonneuses célèbre pour ses petites maisons de
+                pêcheurs
+                flottantes, vaste plaine maraîchère témoin d'une activité agricole autrefois prospère...<br>
+                À quelques encablures de la capitale, comme un air de campagne !</h5>
 
 
             <li>Région : Île-de-France</li>
@@ -58,18 +53,19 @@
 
 
         </div>
-</section>
+    </section>
 
-<?php include ROOT."App/View/commun/footer.phtml" ?>
-  </div>
- <?php include ROOT."App/View/commun/connection.phtml"?>
+    <?php include ROOT . "App/View/commun/footer.phtml" ?>
+</div>
+<?php include ROOT . "App/View/commun/connection.phtml" ?>
 
 </body>
 <script>
 
     let myIndex = 0
     carousel()
-showActive("info")
+    showActive("info")
+
     function carousel() {
         let i
         let x = document.getElementsByClassName("mySlide")

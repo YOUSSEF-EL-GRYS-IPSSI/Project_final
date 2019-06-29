@@ -4,26 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,400i" rel="stylesheet">
     <script src="../../public/js/main.js"></script>
     <title>Carriere Sous Poissy</title>
-    <style>
-        .bigSlider {
-            text-align: center;
-        }
-    </style>
+
 </head>
 
 <body>
-    <div class="main">
-
-   
-   <?php include ROOT."App/View/commun/header.phtml"?>
-    <section style="overflow: hidden;
-height: 350px;">
+<div class="main">
+    <?php include ROOT . "App/View/commun/header.phtml" ?>
+    <section class="slider-hidden">
         <div style="max-width:100%">
             <img class="mySlide" src="../../public/images/img35.jpg" style="width:100%">
             <img class="mySlide" src="../../public/images/loisir.jpg" style="width:100%">
@@ -72,15 +65,16 @@ height: 350px;">
         </div>
     </section>
 
- 
-    <?php include ROOT."App/View/commun/footer.phtml" ?>
- </div>
- <?php include ROOT."App/View/commun/connection.phtml"?>
+
+    <?php include ROOT . "App/View/commun/footer.phtml" ?>
+</div>
+<?php include ROOT . "App/View/commun/connection.phtml" ?>
 </body>
 <script>
     let myIndex = 0
     carousel()
-showActive("accueil")
+    showActive("accueil")
+
     function carousel() {
         let i
         let x = document.getElementsByClassName("mySlide")
