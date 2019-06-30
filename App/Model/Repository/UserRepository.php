@@ -21,6 +21,13 @@ class UserRepository
         $this->_repository = $entityManager->getRepository('User');
     }
 
+    public function getUserByLoginAndPwd($login, $pwd){
+        return $this->_repository->createQueryBuilder("u")
+            ->where("u.email = '". $login . "'")
+            ->andWhere("u.password = '" . md5($pwd) . "'")
+            ->getQuery()
+            ->execute();
+    }
 
     public function getAllUsers()
     {

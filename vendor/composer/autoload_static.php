@@ -17,6 +17,10 @@ class ComposerStaticInitc8b367a715e9426237e08add8569b040
             'Symfony\\Contracts\\' => 18,
             'Symfony\\Component\\Console\\' => 26,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'D' => 
         array (
             'Doctrine\\ORM\\' => 13,
@@ -42,6 +46,10 @@ class ComposerStaticInitc8b367a715e9426237e08add8569b040
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Doctrine\\ORM\\' => 
         array (

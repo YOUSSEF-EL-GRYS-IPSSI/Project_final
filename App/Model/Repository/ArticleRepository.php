@@ -27,7 +27,8 @@ class ArticleRepository
     public function getAllArticles(){
         return $this->_repository->createQueryBuilder('a')
             ->where('a.is_published = 1')
-            ->getQuery()->execute();    }
+            ->getQuery()->execute();
+    }
 
     public function getArticleById($id){
         return $this->_repository->find($id);

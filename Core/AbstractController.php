@@ -40,10 +40,15 @@ abstract class AbstractController
      * @param $filename
      * Extraction des variables
      * Affichage de la vue
+     * @param null $controller
      */
-    protected final function render($filename){
+    protected final function render($filename, $controller = null){
         extract($this->_vars);
-        require(ROOT. "App/View/" . lcfirst(str_replace('Controller','',get_class($this))).'/'.$filename.'.phtml');
+        if($controller == null)
+            require(ROOT. "App/View/" . lcfirst(str_replace('Controller','',get_class($this))).'/'.$filename.'.phtml');
+        else
+            require(ROOT. "App/View/" . lcfirst($controller).'/'.$filename.'.phtml');
+
     }
 
 }

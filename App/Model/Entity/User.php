@@ -30,7 +30,6 @@ class User
      * @var integer
      *
      * @ORM\Column(name="firstname", type="string", length=100, nullable=false)
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     public $firstname;
@@ -39,7 +38,6 @@ class User
      * @var integer
      *
      * @ORM\Column(name="lastname", type="string",length=100, nullable=false)
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     public $lastname;
@@ -48,7 +46,6 @@ class User
      * @var integer
      *
      * @ORM\Column(name="email", type="string",length=255, nullable=false)
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     public $email;
@@ -57,7 +54,6 @@ class User
      * @var integer
      *
      * @ORM\Column(name="password", type="string",length=225, nullable=false)
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
 
@@ -65,32 +61,7 @@ class User
     /**
      * @var integer
      *
-     * @ORM\Column(name="birthday", type="date", nullable=true)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    public $birthday;
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="address", type="text", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    public $address;
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="phonenumber", type="integer", nullable=true)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    public $phonenumber;
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="is_admin", type="boolean", nullable=true)
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     public $is_admin;
@@ -98,10 +69,10 @@ class User
      * @var integer
      *
      * @ORM\Column(name="bio", type="text", nullable=false)
-     * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     public $bio;
+
     /**
      * User constructor.
      * @param $id
@@ -109,22 +80,16 @@ class User
      * @param $lastname
      * @param $email
      * @param $password
-     * @param $birthday
-     * @param $address
-     * @param $phonenumber
      * @param $is_admin
      * @param $bio
      */
-    public function __construct($id, $firstname, $lastname, $email, $password, $birthday, $address, $phonenumber, $is_admin, $bio)
+    public function __construct($id, $firstname, $lastname, $email, $password, $is_admin, $bio)
     {
         $this->id = $id;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->email = $email;
         $this->password = $password;
-        $this->birthday = $birthday;
-        $this->address = $address;
-        $this->phonenumber = $phonenumber;
         $this->is_admin = $is_admin;
         $this->bio = $bio;
     }

@@ -27,7 +27,7 @@ class UserService
     public function __construct($entityManager)
     {
         $this->_entityManager = $entityManager;
-        $this->_userRepository = new FactureRepository($entityManager);
+        $this->_userRepository = new UserRepository($entityManager);
     }
 
     /**
@@ -37,7 +37,10 @@ class UserService
      */
     public function getUserById($id){
         return $this->_userRepository->getUserById($id);
+    }
 
+    public function getUserByLoginAndPwd($log, $pwd){
+        return $this->_userRepository->getUserByLoginAndPwd($log,$pwd);
     }
 
     public function getAllUsers(){

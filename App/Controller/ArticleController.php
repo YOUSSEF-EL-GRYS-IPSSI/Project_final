@@ -80,6 +80,4 @@ class ArticleController extends AbstractController
         echo json_encode(($data));
         exit;
     }
-
-
 }

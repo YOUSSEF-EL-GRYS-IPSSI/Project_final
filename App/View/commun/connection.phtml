@@ -6,17 +6,17 @@
         Formulaire
     </div>
     <div class="modal-body">
-        <form onsubmit="connectionPrevent(this)">
+        <form method="post" action="/Home/connect">
             <div class="form-connection-controller">
                 <div class="label-controller">
                     <label for="">Email</label>
                 </div>
-                <div class="input-controller"> <input type="email"></div>
+                <div class="input-controller"> <input name="email" type="email"></div>
 
             </div>
             <div class="form-connection-controller">
                 <div class="label-controller"> <label for="">Mot de passe</label></div>
-                <div class="input-controller"> <input type="password"></div>
+                <div class="input-controller"> <input name="pwd" type="password"></div>
             </div>
             <div class="form-submit-controller">
                 <button type="submit">Connexion</button>

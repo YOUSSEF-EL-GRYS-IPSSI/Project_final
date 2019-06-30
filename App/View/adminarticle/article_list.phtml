@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administration des articles - Mon premier blog !</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+<body class="index-body">
+<div class="container-fluid">
+    <header class="row mb-3 main-header">
+        <div class="col py-4 text-center">
+            <a href="../../admin/index.html"><b>Administration - Mon premier blog !</b></a>
+        </div>
+    </header>			<div class="row my-3 index-content">
+    ﻿<nav class="col-3 py-2 categories-nav">
+    <a class="d-block btn btn-warning mb-4 mt-2" href="../../../index.php">Site</a>
+    <ul>
+        <li><a href="adminuser/list">Gestion des utilisateurs (1)</a></li>
+        <li><a href="adminfacture/list">Gestion des factures (4)</a></li>
+        <li><a href="list">Gestion des articles (9)</a></li>
+    </ul>
+</nav>
+    <section class="col-9">
+        <header class="pb-4 d-flex justify-content-between">
+            <h4>Liste des articles</h4>
+            <a class="btn btn-primary" href="addedit">Ajouter un article</a>
+        </header>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Titre</th>
+                <th>Publié</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($articles as $article){ ?>
+            <tr>
+                <!-- htmlentities sert à écrire les balises html sans les interpréter -->
+                <th><?= $article->id ?></th>
+                <td><?= utf8_encode($article->title) ?></td>
+                <td>
+                    <?= $article->is_published ?>								</td>
+                <td>
+                    <a href="addedit?article_id=<?= $article->id ?>" class="btn btn-warning">Modifier</a>
+                    <a onclick="return confirm('Are you sure?')" href="list?article_id=<?= $article->id ?>&action=delete" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+            <?php } ?>
+
+            </tbody>
+        </table>
+    </section>
+</div>
+</div>
+</body>
+</html>
