@@ -31,6 +31,9 @@ abstract class AbstractController
      * @param $d array
      * Ajout d'une d'un tableau à vars
      */
+
+    ///declare une function set qui prend un type de tableau
+    /// sa cree un tableau a transmetre a la view
     protected final function set(array $d)
     {
         $this->_vars = array_merge($this->_vars, $d);

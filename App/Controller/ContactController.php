@@ -5,7 +5,8 @@
  * Date: 25/06/2019
  * Time: 17:59
  */
-
+require "App/Service/ArticleService.php";
+1
 class ContactController extends AbstractController
 {
     public function indexAction(){

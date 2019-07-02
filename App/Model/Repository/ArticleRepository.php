@@ -25,12 +25,14 @@ class ArticleRepository
      * @return mixed
      */
     public function getAllArticles(){
+        // c'est l'objet de construction d'une requete SQL
         return $this->_repository->createQueryBuilder('a')
             ->where('a.is_published = 1')
             ->getQuery()->execute();
     }
 
     public function getArticleById($id){
+        //tu me recherche larticle qui a pour cléf primaire $id
         return $this->_repository->find($id);
     }
 

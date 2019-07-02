@@ -8,7 +8,7 @@ require "App/Service/UserService.php";
 class HomeController extends AbstractController {
 
     public function indexAction()
-    {
+    { /// definis ou se trouve la vieu
         $this->render('index');
     }
 

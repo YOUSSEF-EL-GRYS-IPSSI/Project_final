@@ -16,6 +16,8 @@ class AdminArticleController extends AbstractController
         $this->set(['articles' => $articles]);
         $this->render('article_list');
     }
+    // set = c'est pour rajouter un dans le $vars
+    //render = met en forme le $vars " extact et envoie la view associer au parametre"
 
     public function addeditAction(){
         if(!empty($_GET['article_id'])){

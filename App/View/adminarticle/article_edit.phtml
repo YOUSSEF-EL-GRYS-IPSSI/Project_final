@@ -17,70 +17,78 @@
         <div class="col py-4 text-center">
             <a href="../../admin/index.html"><b>Administration - Mon premier blog !</b></a>
         </div>
-    </header>			<div class="row my-3 index-content">
-    ﻿<nav class="col-3 py-2 categories-nav">
-    <a class="d-block btn btn-warning mb-4 mt-2" href="../../../index.php">Site</a>
-    <ul>
-        <li><a href="article_list.phtml">Gestion des utilisateurs (1)</a></li>
-        <li><a href="">Gestion des catégories (4)</a></li>
-        <li><a href="../../admin/user_list.html">Gestion des articles (9)</a></li>
-    </ul>
-</nav>
-    <section class="col-9">
-        <header class="pb-3">
-            <!-- Si $article existe, on affiche "Modifier" SINON on affiche "Ajouter" -->
-            <h4>Ajouter un article</h4>
-        </header>
-        <!-- Si $article existe, chaque champ du formulaire sera pré-remplit avec les informations de l'article -->
-        <form action="article-form.php" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="title">Titre :</label>
-                <input class="form-control"  type="text" value="<?php echo utf8_encode($article->title) ?>"  name="title" id="title" />
-            </div>
-            <div class="form-group">
-                <label for="summary">Résumé :</label>
-                <input class="form-control" type="text" value="<?= $article->summary ?>" name="summary" id="summary" />
-            </div>
-            <div class="form-group">
-                <label for="content">Contenu :</label>
-                <textarea class="form-control" name="content" id="content" ><?= $article->content ?></textarea>
-            </div>
+    </header>
+    <div class="row my-3 index-content">
+        ﻿
+        <nav class="col-3 py-2 categories-nav">
+            <a class="d-block btn btn-warning mb-4 mt-2" href="../../../index.php">Site</a>
+            <ul>
+                <li><a href="article_list.phtml">Gestion des utilisateurs (1)</a></li>
+                <li><a href="">Gestion des catégories (4)</a></li>
+                <li><a href="user_list.phtml">Gestion des articles (9)</a></li>
+            </ul>
+        </nav>
+        <section class="col-9">
+            <header class="pb-3">
+                <!-- Si $article existe, on affiche "Modifier" SINON on affiche "Ajouter" -->
+                <h4>Ajouter un article</h4>
+            </header>
+            <!-- Si $article existe, chaque champ du formulaire sera pré-remplit avec les informations de l'article -->
+            <form action="article-form.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Titre :</label>
+                    <input class="form-control" type="text" value="<?php echo utf8_encode($article->title) ?>"
+                           name="title" id="title"/>
+                </div>
+                <div class="form-group">
+                    <label for="summary">Résumé :</label>
+                    <input class="form-control" type="text" value="<?= $article->summary ?>" name="summary"
+                           id="summary"/>
+                </div>
+                <div class="form-group">
+                    <label for="content">Contenu :</label>
+                    <textarea class="form-control" name="content" id="content"><?= $article->content ?></textarea>
+                </div>
 
-            <div class="form-group">
-                <label for="published_at">Date de publication :</label>
-                <input class="form-control" type="date" value="<?= $article->created_at ?>" name="published_at" id="published_at" />
-            </div>
+                <div class="form-group">
+                    <label for="published_at">Date de publication :</label>
+                    <input class="form-control" type="date" value="<?= $article->created_at ?>" name="published_at"
+                           id="published_at"/>
+                </div>
 
-            <div class="form-group">
-                <label for="is_published">Publié ?</label>
-                <select class="form-control" name="is_published" value="<?= $article->is_published ?>" id="is_published">
-                    <option value="0" >Non</option>
-                    <option value="1" >Oui</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="is_published">Publié ?</label>
+                    <select class="form-control" name="is_published" value="<?= $article->is_published ?>"
+                            id="is_published">
+                        <option value="0">Non</option>
+                        <option value="1">Oui</option>
+                    </select>
+                </div>
 
 
-            <div class="form-group">
-                <label for="published_at">Date de publication :</label>
-                <input class="form-control" type="date" value="<?= $article->video ?>" name="published_at" id="published_at" />
-            </div>
+                <div class="form-group">
+                    <label for="published_at">Date de publication :</label>
+                    <input class="form-control" type="date" value="<?= $article->video ?>" name="published_at"
+                           id="published_at"/>
+                </div>
 
-            <div class="form-group">
-                <label for="published_at">Date de publication :</label>
-                <input class="form-control" type="date" value="<?= $article->collection ?>" name="published_at" id="published_at" />
-            </div>
+                <div class="form-group">
+                    <label for="published_at">Date de publication :</label>
+                    <input class="form-control" type="date" value="<?= $article->collection ?>" name="published_at"
+                           id="published_at"/>
+                </div>
 
-            <div class="text-right">
-                <!-- Si $article existe, on affiche un lien de mise à jour -->
-                <input class="btn btn-success" type="submit" name="save" value="Enregistrer" />
-            </div>
+                <div class="text-right">
+                    <!-- Si $article existe, on affiche un lien de mise à jour -->
+                    <input class="btn btn-success" type="submit" name="save" value="Enregistrer"/>
+                </div>
 
-            <!-- Si $article existe, on ajoute un champ caché contenant l'id de l'article à modifier pour la requête UPDATE -->
+                <!-- Si $article existe, on ajoute un champ caché contenant l'id de l'article à modifier pour la requête UPDATE -->
 
-        </form>
+            </form>
 
-    </section>
-</div>
+        </section>
+    </div>
 </div>
 </body>
 </html>
