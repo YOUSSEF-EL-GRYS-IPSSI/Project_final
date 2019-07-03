@@ -1,0 +1,16 @@
+<header class="row mb-3 main-header">
+    <div class="col py-4 text-center">
+        <a href="/home/index"><b>Administration</b></a>
+    </div>
+</header>			<div class="row my-3 index-content">
+    ﻿<nav class="col-3 py-2 categories-nav">
+        <a class="d-block btn btn-warning mb-4 mt-2" href="../../admin/index.html">Site</a>
+        <ul>
+            <?php if($isAdmin){ ?>
+            <li><a href="/adminuser/list">Gestion des utilisateurs</a></li>
+            <li><a href="/adminfacture/list">Gestion des factures</a></li>
+            <li><a href="/adminarticle/list">Gestion des articles</a></li>
+    <?php } ?>
+            <li><a href="/userfacture/list">Mes factures</a></li>
+        </ul>
+    </nav>

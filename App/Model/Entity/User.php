@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * user
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="users")
  * @ORM\Entity
  */
 class User
@@ -61,36 +61,25 @@ class User
     /**
      * @var integer
      *
-     * @ORM\Column(name="is_admin", type="boolean", nullable=true)
+     * @ORM\Column(name="isadmin", type="boolean", nullable=true)
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     public $is_admin;
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="bio", type="text", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    public $bio;
 
     /**
      * User constructor.
-     * @param $id
      * @param $firstname
      * @param $lastname
      * @param $email
      * @param $password
      * @param $is_admin
-     * @param $bio
      */
-    public function __construct($id, $firstname, $lastname, $email, $password, $is_admin, $bio)
+    public function __construct($firstname, $lastname, $email, $password, $is_admin)
     {
-        $this->id = $id;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->email = $email;
         $this->password = $password;
         $this->is_admin = $is_admin;
-        $this->bio = $bio;
     }
 }

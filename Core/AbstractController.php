@@ -25,7 +25,10 @@ abstract class AbstractController
         $this->_entityManager = $entityManager;
     }
 
+    public function init()
+    {
 
+    }
 
     /**
      * @param $d array

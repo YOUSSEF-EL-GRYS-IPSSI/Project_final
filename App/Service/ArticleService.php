@@ -30,18 +30,14 @@ class ArticleService
         $this->_articleRepository = new ArticleRepository($entityManager);
     }
 
-    /**
-     * @param $id
-     * @return Article
-     *
-     */
+
     public function getArticleById($id){
         return $this->_articleRepository->getArticleById($id);
 
     }
 
-    public function getAllArticles(){
-        return $this->_articleRepository->getAllArticles();
+    public function getAllArticles($published = true){
+        return $this->_articleRepository->getAllArticles($published);
     }
 
     public function createArticle(Article $article){

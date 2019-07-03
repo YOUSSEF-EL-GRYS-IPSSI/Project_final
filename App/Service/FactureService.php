@@ -27,21 +27,17 @@ class FactureService
     public function __construct($entityManager)
     {
         $this->_entityManager = $entityManager;
-        $this->_FactureRepository = new FactureRepository($entityManager);
+        $this->_factureRepository = new FactureRepository($entityManager);
     }
 
-    /**
-     * @param $id
-     * @return Facture
-     *
-     */
+
     public function getFactureById($id){
         return $this->_factureRepository->getFactureById($id);
 
     }
 
     public function getAllFactures(){
-        return $this->_articleRepository->getAllFactures();
+        return $this->_factureRepository->getAllFactures();
     }
 
     public function createFacture(Facture $facture){

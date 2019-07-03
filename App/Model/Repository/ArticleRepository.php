@@ -22,13 +22,15 @@ class ArticleRepository
     }
 
     /**
+     * @param $published
      * @return mixed
      */
-    public function getAllArticles(){
+    public function getAllArticles($published){
         // c'est l'objet de construction d'une requete SQL
-        return $this->_repository->createQueryBuilder('a')
-            ->where('a.is_published = 1')
-            ->getQuery()->execute();
+        $builder = $this->_repository->createQueryBuilder('a');
+        if($published)
+            $builder->where('a.is_published = 1');
+        return $builder->getQuery()->execute();
     }
 
     public function getArticleById($id){

@@ -6,7 +6,7 @@
  * Time: 17:59
  */
 require "App/Service/ArticleService.php";
-1
+
 class ContactController extends AbstractController
 {
     public function indexAction(){
@@ -21,11 +21,10 @@ class ContactController extends AbstractController
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
 
-// But you can comment from here
         $mail->SMTPSecure = "tls";
         $mail->Port = 587;
         $mail->CharSet = "UTF-8";
-// To here. 'cause default secure is TLS.
+
 
         $mail->setFrom(json_decode($_POST['data'])->email, json_decode($_POST['data'])->name);
         $mail->Username = "elgrysyoussef78@gmail.com";
@@ -34,7 +33,7 @@ class ContactController extends AbstractController
         $mail->Subject = "Тест";
         $mail->isHTML(true);
         $mail->msgHTML($html);
-        $mail->addAddress("ceccaldi.jeanbaptiste@gmail.com", "Ceccaldi");
+        $mail->addAddress("elgrysyoussef78@gmail.com", "mairie");
 
         if (!$mail->send()) {
             $mail->ErrorInfo;

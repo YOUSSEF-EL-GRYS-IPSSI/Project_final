@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * FactureRepository
  *
- * @ORM\Table(name="facture")
+ * @ORM\Table(name="factures")
  * @ORM\Entity
  */
 
@@ -42,9 +42,9 @@ class Facture
     /**
      * @var string
      *
-     * @ORM\Column(name="ammount", type="double", nullable=false)
+     * @ORM\Column(name="amount", type="float", nullable=false)
      */
-    public $ammount;
+    public $amount;
 
     /**
      * @var string
@@ -55,18 +55,16 @@ class Facture
 
     /**
      * FactureRepository constructor.
-     * @param $id
      * @param $title
      * @param $date
-     * @param $ammount
+     * @param $amount
      * @param $file
      */
-    public function __construct($id, $title, $date, $ammount, $file)
+    public function __construct($title, $date, $amount, $file)
     {
-        $this->id = $id;
         $this->title = $title;
         $this->date = $date;
-        $this->ammount = $ammount;
+        $this->amount = $amount;
         $this->file = $file;
     }
 }

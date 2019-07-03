@@ -60,27 +60,5 @@
 <?php include ROOT . "App/View/commun/connection.phtml" ?>
 
 </body>
-<script>
-
-    let myIndex = 0
-    carousel()
-    showActive("info")
-
-    function carousel() {
-        let i
-        let x = document.getElementsByClassName("mySlide")
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none"
-        }
-        myIndex++
-        if (myIndex > x.length) {
-            myIndex = 1
-        }
-        x[myIndex - 1].style.display = "block"
-        setTimeout(carousel, 2000) // Change iage every 2 seconds
-    }
-
-    ///////////////////////////////////////
-
-</script>
+<script src="../../../public/js/slider.js"></script>
 </html>

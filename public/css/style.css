@@ -140,6 +140,7 @@ a {
 
 }
 
+
 #form-page {
     margin-top: 70px;
     padding: 30px;
@@ -276,13 +277,121 @@ a {
     cursor: pointer;
     outline: none;
 }
-#articles{
+
+#articles > #article{
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    line-height: 38px;
 }
+#article > img{
+    width: 50% ;
+}
+
+.btn {
+    border: 1px solid rgba(0, 0, 255, .4);
+    background: whitesmoke;
+    padding: 5px 20px 5px 20px;
+    box-shadow: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .3 cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+.btn {
+    padding: 10px 20px 10px 20px;
+    border: 1px solid white;
+    font-size: .9em;
+    cursor: pointer;
+    background-color: #294d90;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+    transition: all .3s linear;
+    border-radius: 4px;
+}
+
+.btn:active {
+    background-color: #A9B7D2;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+
+.btn:focus {
+    background: rgba(0, 0, 255, .4);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn:hover {
+    background: rgba(0, 0, 255, .4);
+}
+
+.validate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(46, 69, 119);
+    margin-bottom: 30px;
+}
+
+.info {
+    flex: 0 0 70%;
+    color: white;
+}
+
+.validate-ok {
+    flex: 0 0 30%;
+    text-align: center;
+}
+
+.payed {
+    border: 1px solid lime;
+    padding: 5px;
+    color: lime;
+}
+
+.not-payed {
+    border: 1px solid red;
+    padding: 5px;
+    color: red;
+}
+
+.lname {
+    border: 1px solid rgb(46, 69, 119);
+    color: rgb(46, 69, 119);
+    padding: 5px;
+}
+
+.table-header {
+    display: flex;
+}
+
+.table-th {
+    flex: 0 0 calc(100%/6);
+    color: white;
+    background-color: rgb(46, 69, 119);
+    text-align: center;
+    font-weight: bold;
+    line-height: 40px;
+    height: 40px;
+}
+
+.table-line {
+    display: flex;
+}
+
+.table-tr {
+    flex: 0 0 calc(100%/6);
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+}
+
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .steap-blue {
@@ -296,6 +405,152 @@ a {
     text-align: center;
     color: #ffffff;
 
+}
+.mask {
+    display: none;
+}
+
+@media only screen and (max-width: 400px) {
+    .modal.active.connection-modal {
+        width: 90% !important;
+    }
+
+    .modal.active.connection-modal.mini {
+        width: 90% !important;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .modal.active .input-controller input {
+        max-width: 100% !important;
+    }
+
+    .modal.active .modal-title {
+        font-size: 1em !important;
+        padding: 0 !important;
+    }
+
+    .modal.active.connection-modal {
+        width: 50% !important;
+    }
+}
+
+.modal.active .form-psw-forgot {
+    float: right;
+    font-size: 1em;
+
+    color: rgba(0, 0, 0, .4);
+    margin-top: 20px;
+
+}
+
+.mask.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    opacity: .5;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+
+.modal {
+    z-index: 1041;
+    display: none;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal.active.connection-modal {
+    top: 50%;
+    width: 30%;
+    text-align: center;
+    position: fixed;
+    background: white;
+    left: 50%;
+    transition: all .3s linear;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px 20px 40px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    animation-name: fadeDown;
+    animation-duration: .3s;
+}
+
+@keyframes fadeDown {
+    from {
+        transform: translate(-50%, -50%) scale(.2);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.modal.active .modal-title {
+    font-weight: bold;
+    font-size: 1.8em;
+    padding: 50px;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+    transition: all .3s linear;
+    color: rgba(0, 0, 0, .6);
+}
+
+.modal.active .label-controller {
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, .4);
+}
+
+.modal.active .form-submit-controller button {
+    padding: 10px 20px 10px 20px;
+    border: 1px solid white;
+    font-size: .9em;
+    cursor: pointer;
+    background-color: #294d90;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+    transition: all .3s linear;
+    border-radius: 4px;
+}
+
+.modal.active .form-submit-controller button:active {
+    background-color: #A9B7D2;
+}
+
+.modal.active .form-submit-controller button:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+
+.modal.active .input-controller {
+    margin-top: 10px;
+}
+
+.modal.active .input-controller input {
+
+    border-radius: 4px;
+    transition: all .3s linear;
+    border: 0;
+
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    padding: 10px;
+    transition: all .3 linear;
+    text-align: center;
+    font-size: .8em;
+}
+
+.modal.active .modal-body .form-connection-controller {
+    width: 100%;
+
+
+    margin-bottom: 20px;
 }
 
 /*///////////////////////////////////////////////////FOOOTER//////////////////////////////////////////////////////////////////////////////*/

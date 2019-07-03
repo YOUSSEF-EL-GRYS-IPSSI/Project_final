@@ -58,7 +58,7 @@ class UserService
     }
 
     public function deleteUser($id){
-        $user = $this->getFactureById($id);
+        $user = $this->getUserById($id);
         $this->_entityManager->remove($user);
         $this->_entityManager->flush();
     }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administration des articles - Mon premier blog !</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+<body class="index-body">
+<div class="container-fluid">
+    <?php include ROOT . "App/View/commun/adminmenu.phtml" ?>
+
+    <section class="col-9">
+            <header class="pb-3">
+                <!-- Si $article existe, on affiche "Modifier" SINON on affiche "Ajouter" -->
+                <h4>Ajouter un article</h4>
+            </header>
+            <!-- Si $article existe, chaque champ du formulaire sera pré-remplit avec les informations de l'article -->
+            <form action="create" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="title">Titre :</label>
+                    <input class="form-control" value="" type="text" placeholder="Titre" name="title" id="title"/>
+                </div>
+                <div class="form-group">
+                    <label for="title">Date :</label>
+                    <input class="form-control" value="" type="text" placeholder="Date" name="date" id="date"/>
+                </div>
+                <div class="form-group">
+                    <label for="summary">Montant :</label>
+                    <input class="form-control" value="" type="text" placeholder="Montant" name="amount" id="amount"/>
+                </div>
+                <div class="form-group">
+                    <label for="content">PDF :</label>
+                    <textarea class="form-control" name="file" id="file" placeholder="file"></textarea>
+                </div>
+
+                <div class="text-right">
+                    <!-- Si $article existe, on affiche un lien de mise à jour -->
+                    <input class="btn btn-success" type="submit" name="save" value="Enregistrer"/>
+                </div>
+
+                <!-- Si $article existe, on ajoute un champ caché contenant l'id de l'article à modifier pour la requête UPDATE -->
+
+            </form>
+
+        </section>
+    </div>
+</div>
+</body>
+</html>

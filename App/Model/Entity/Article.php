@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Arcticle
  *
- * @ORM\Table(name="article")
+ * @ORM\Table(name="articles")
  * @ORM\Entity
  */
 class Article
@@ -64,17 +64,10 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="video", type="string", length=50, nullable=true)
-     */
-    public $video;
-
-    /**
-     * @var string
+     * @ORM\Column(name="image", type="string", length=255, nullable=false)
      *
-     * @ORM\Column(name="collection", type="string", length=255, nullable=true)
      */
-    public $collection;
-
+    public $image;
 
     /**
      * Article constructor.
@@ -83,18 +76,16 @@ class Article
      * @param $content
      * @param $summary
      * @param $is_published
-     * @param $video
-     * @param $collection
      */
-    public function __construct($title, $created_at, $content, $summary, $is_published, $video, $collection)
+    public function __construct($title, $created_at, $content, $summary, $is_published, $image)
     {
         $this->title = $title;
         $this->created_at = $created_at;
         $this->content = $content;
         $this->summary = $summary;
         $this->is_published = $is_published;
-        $this->video = $video;
-        $this->collection = $collection;
+        $this->image = $image;
     }
+
 }
 

@@ -12,9 +12,16 @@ class ArticleController extends AbstractController
 
     public function findAction(){ // Méthode POST récupérant un seul article avec son id
         $articleService = new ArticleService($this->_entityManager);
-        $articles=$articleService->getArticleById($_POST['id']); // Appel du modele*
-        $this->set(array('unSeulArticle' => $articles)); // Passage des arguments à la vue
-        $this->render('displayOneArticle'); // Appel de la vue
+        $article=$articleService->getArticleById($_POST['id']); // Appel du modele*
+        $this->set(array('article' => $article)); // Passage des arguments à la vue
+        $this->render('display'); // Appel de la vue
+    }
+
+    public function displayArticleAction(){
+        $articleService = new ArticleService($this->_entityManager);
+        $article=$articleService->getArticleById($_GET['id']); // Appel du modele*
+        $this->set(array('article' => $article)); // Passage des arguments à la vue
+        $this->render('display'); // Appel de la vue
     }
 
     public function findAllAction(){ // Return vers la vue View/article/list.php
@@ -70,12 +77,17 @@ class ArticleController extends AbstractController
         $this->render('index');
     }
 
+    public function getArticleById(){
+        $articleService = new ArticleService($this->_entityManager);
+        $this->set(array('article' => json_encode($articleService->getArticleById($_POST['id']))));
+    }
+
     public function getArticlesByDatePostAction(){
         $articleService = new ArticleService($this->_entityManager);
         $date = json_decode($_POST['data'])->startPeriod;
         $data = $articleService->getArticlesByDate($date);
         $data = array_map(function($e){
-            return utf8_encode($e);
+            return utf8_encode(str_replace("<p>", "", str_replace("</p>", "", $e)));
         }, get_object_vars($data[0]));
         echo json_encode(($data));
         exit;

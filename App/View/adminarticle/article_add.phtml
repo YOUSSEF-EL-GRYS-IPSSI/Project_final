@@ -8,32 +8,20 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+
 </head>
 <body class="index-body">
 <div class="container-fluid">
-    <header class="row mb-3 main-header">
-        <div class="col py-4 text-center">
-            <a href="../../admin/index.html"><b>Administration - Mon premier blog !</b></a>
-        </div>
-    </header>
-    <div class="row my-3 index-content">
-        ﻿
-        <nav class="col-3 py-2 categories-nav">
-            <a class="d-block btn btn-warning mb-4 mt-2" href="../../../index.php">Site</a>
-            <ul>
-                <li><a href="article_list.phtml">Gestion des utilisateurs (1)</a></li>
-                <li><a href="">Gestion des catégories (4)</a></li>
-                <li><a href="user_list.phtml">Gestion des articles (9)</a></li>
-            </ul>
-        </nav>
+    <?php include ROOT . "App/View/commun/adminmenu.phtml" ?>
+
         <section class="col-9">
             <header class="pb-3">
                 <!-- Si $article existe, on affiche "Modifier" SINON on affiche "Ajouter" -->
                 <h4>Ajouter un article</h4>
             </header>
             <!-- Si $article existe, chaque champ du formulaire sera pré-remplit avec les informations de l'article -->
-            <form action="article-form.php" method="post" enctype="multipart/form-data">
+            <form action="create" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="title">Titre :</label>
@@ -49,27 +37,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="category_id">Catégorie :</label>
-                    <select class="form-control" name="category_id" id="category_id">
-                        <option value="9">
-                            Cinéma
-                        </option>
-                        <option value="47">
-                            Musique
-                        </option>
-                        <option value="52">
-                            Théâtre
-                        </option>
-                        <option value="108">
-                            Jeux vidéos
-                        </option>
-
-                    </select>
-                </div>
-
-                <div class="form-group">
                     <label for="published_at">Date de publication :</label>
-                    <input class="form-control" value="" type="date" placeholder="Résumé" name="published_at"
+                    <input class="form-control" value="" type="date" placeholder="Résumé" name="created_at"
                            id="published_at"/>
                 </div>
 
@@ -79,6 +48,12 @@
                         <option value="0">Non</option>
                         <option value="1">Oui</option>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Image">Image : </label>
+                    <input class="form-control" type="file" placeholder="Image" name="image"
+                           id="image"/>
                 </div>
 
                 <div class="text-right">

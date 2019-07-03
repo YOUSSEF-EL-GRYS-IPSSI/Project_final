@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administration des catégories - Mon premier blog !</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+<body class="index-body">
+<div class="container-fluid">
+    <?php include ROOT . "App/View/commun/adminmenu.phtml" ?>
+
+    <section class="col-9">
+        <header class="pb-4 d-flex justify-content-between">
+            <h4>Liste des catégories</h4>
+            <a class="btn btn-primary" href="addEdit">Ajouter une facture</a>
+        </header>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($factures as $facture){ ?>
+                <tr>
+                    <!-- htmlentities sert à écrire les balises html sans les interpréter -->
+                    <td><?= utf8_encode($facture->id) ?></td>
+                    <td><?= utf8_encode($facture->title) ?></td>
+                    <td><?= utf8_encode($facture->amount) ?></td>
+                    <td><?= utf8_encode($facture->file) ?></td>
+                    <td>
+                        <a href="addedit?facture_id=<?= $facture->id ?>" class="btn btn-warning">Modifier</a>
+                        <a onclick="return confirm('Are you sure?')" href="delete?facture_id=<?= $facture->id ?>&action=delete" class="btn btn-danger">Supprimer</a>
+                    </td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+    </section>
+</div>
+</div>
+</body>
+</html>

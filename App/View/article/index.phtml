@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    <script type="text/javascript" src="../../../public/js/article.js"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -28,9 +26,8 @@
     <section class="date-time">
         <div>
 
-            Date de début : <input type="date" value="2018-01-14" id="startPeriod"><br>
-            Date de fin : <input type="date" value="2019-06-30" id="endPeriod"></br>
-            <input id="dateSubmit" onclick="getArticles()" type="button" value="soumettre" name="submit">
+            Date : <input type="date" value="2018-01-14" id="startPeriod"><br>
+            <input id="dateSubmit" onclick="getArticlesByDate()" type="button" value="soumettre" name="submit">
         </div>
     </section>
     <section>
@@ -42,8 +39,10 @@
     <?php include ROOT . "/App/View/commun/footer.phtml" ?>
 </div>
 <?php include ROOT . "/App/View/commun/connection.phtml" ?>
+<script type="text/javascript" src="../../../public/js/article.js"></script>
 
 </body>
+
 <script>
 
     let myIndex = 0

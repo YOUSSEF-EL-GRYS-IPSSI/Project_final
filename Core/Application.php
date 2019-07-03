@@ -11,6 +11,7 @@ class Application
     /**
      * @param $config
      */
+
     public static function run($config){
         $param = explode('/',$config['route']);
         $controller = ucfirst($param[0])."Controller";
@@ -20,6 +21,7 @@ class Application
 
         $controller = new $controller($config['entityManager']);
         if (method_exists($controller, $action)){
+            $controller->init();
             $controller->$action();
         }
         else{
